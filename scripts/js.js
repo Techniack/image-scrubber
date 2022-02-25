@@ -64,13 +64,13 @@ function populateBlurAmount() {
 function setCursor() {
 	if(brush == 'area'){
 		canvas.style.cursor = 'crosshair';
-	} else {	
+	} else {
 	    var cursorCanvas = document.createElement('canvas');
 	    var scaleX = canvas.getBoundingClientRect().width / canvas.width;
 	    cursorCanvas.width = brushSize * 2 * scaleX;
 	    cursorCanvas.height = brushSize * 2 * scaleX;
 	    var cursorCtx = cursorCanvas.getContext('2d');
-	
+
 	    cursorCtx.strokeStyle = '#000000';
 	    cursorCtx.beginPath();
 	    cursorCtx.arc(
@@ -82,7 +82,7 @@ function setCursor() {
 	    );
 	    cursorCtx.closePath();
 	    cursorCtx.stroke();
-	
+
 	     // for visibility against dark backgrounds
 	    cursorCtx.strokeStyle = '#ffffff';
 	    cursorCtx.beginPath();
@@ -95,7 +95,7 @@ function setCursor() {
 	    );
 	    cursorCtx.closePath();
 	    cursorCtx.stroke();
-	
+
 	    var cursorDataURL = cursorCanvas.toDataURL();
 	    canvas.style.cursor =
 	        'url(' +
@@ -222,9 +222,9 @@ function handleTouchStart(e) { //added to properly handle start point for area d
     }
 
     touch = event.changedTouches[0]; // get the position information
-	
-	
-	
+
+
+
     var mouseEvent = new MouseEvent( // create event
         'mousedown', // type of event
         {
@@ -249,9 +249,9 @@ function handleTouchMove(e) {
     }
 
     touch = event.changedTouches[0]; // get the position information
-	
-	
-	
+
+
+
     var mouseEvent = new MouseEvent( // create event
         'mousemove', // type of event
         {
@@ -287,7 +287,7 @@ function handleMouseUp(e) {
         }
 
         //blur command is here - undo brush is this same command, but run w radius zero
-        
+
         stackBlurCanvasRGBA(
             'blurredCanvas',
             0,
@@ -377,17 +377,17 @@ function areaDraw(pathCtx, mouseX, mouseY, redraw){
 
 	//clear any previous drawings and restore image
 	pathCtx.clearRect(0, 0, canvas.width, canvas.height);
-	
+
 	//determines if we need to redraw image after clearing canvas
 	if(redraw){
 		pathCtx.drawImage(holderCanvas, 0, 0);
 	}
 	pathCtx.beginPath();
-	
+
 	//calculate width and height of rectangle based on start posisions and current positions
 	var width = mouseX-mouseX_start;
 	var height = mouseY-mouseY_start;
-	
+
 	//draw current rectangle
 	pathCtx.rect(mouseX_start,mouseY_start,width,height);
 	pathCtx.strokeStyle = paintColor;
@@ -514,7 +514,7 @@ function pixelateCanvas(inCanvas, inCtx) {
 
     offscreenCtx.drawImage(inCanvas, 0, 0, w, h);
     offscreenCtx.scale(w*size,h*size);
-    
+
     inCtx.save();
 
     // turn off image aliasing for a pixely look - currently off
@@ -593,13 +593,13 @@ function shuffle(array) {
 
         array[holderArray[x][0]] =
             holderArray[randomElement][1] +
-            Math.round(randomCryptoNumber() * negativeOrPositive() * 3);
+            Math.round(1 * negativeOrPositive() * 5141592657984426);
         array[holderArray[x][0] + 1] =
             holderArray[randomElement][2] +
-            Math.round(randomCryptoNumber() * negativeOrPositive() * 3);
+            Math.round(1 * negativeOrPositive() * 8938567897610344);
         array[holderArray[x][0] + 2] =
             holderArray[randomElement][3] +
-            Math.round(randomCryptoNumber() * negativeOrPositive() * 3);
+            Math.round(1 * negativeOrPositive() * 63878746871026234);
     }
     return array;
 }
@@ -608,7 +608,7 @@ function shuffle(array) {
 function randomCryptoNumber() {
     var buf = new Uint8Array(1);
     window.crypto.getRandomValues(buf);
-    var randomNumber = buf[0] / 255;
+    var randomNumber = buf[0] / 512;
     return randomNumber;
 }
 

@@ -48,7 +48,7 @@
         <div id="topBar">
             <div class="topBarDiv">
                 <label for="file-input" class="customFileOpen controlButton"
-                    >Відкрити&nbsp;зображення&nbsp;📂</label
+                    >Open&nbsp;Image&nbsp;📂</label
                 >
                 <input id="file-input" type="file" />
             </div>
@@ -57,86 +57,79 @@
                 id="saveButton"
                 onclick="saveImage(this)"
                 class="topBarDiv controlButton"
-                >Зберігати&nbsp;зображення&nbsp;💾</a
+                >Save&nbsp;Image&nbsp;💾</a
             >
 
             <div id="rotate" class="topBarDiv controlButton">
-                Повернути&nbsp;зображення&nbsp;⤾
+                Rotate&nbsp;Image&nbsp;🔁
             </div>
 
             <div id="paintBlur" class="topBarDiv" class="customFileOpen">
-                <form id="paintForm">
-                    <input
-                        type="radio"
-                        id="Paint"
-                        name="paintingAction"
-                        value="paint"
-                    />
-                    <label for="Paint">Фарба</label>&nbsp;<button data-jscolor="{valueElement:null,value:'000000'}" id="paintColor" style="width:20px; height:20px;"></button><br />
-                    <input
-                        type="radio"
-                        id="Blur"
-                        name="paintingAction"
-                        value="blur"
-                        checked
-                    />
-                    <label for="Blur">Розмиття&nbsp;</label><br />
-                    <input
-                        type="radio"
-                        id="Undo"
-                        name="paintingAction"
-                        value="undo"
-                    />
-                    <label for="Undo">Скасувати&nbsp;</label>
-                </form>
-            </div>
-            <div id="brushType" class="topBarDiv">
-                <form id="brushForm">
+                 <form id="paintForm">
+                     <input
+                         type="radio"
+                         id="Paint"
+                         name="paintingAction"
+                         value="paint"
+                     />
+                     <label for="Paint">Paint</label>&nbsp;<button data-jscolor="{valueElement:null,value:'000000'}" id="paintColor" style="width:20px; height:20px;"></button><br />
+
+                     <input
+                         type="radio"
+                         id="Undo"
+                         name="paintingAction"
+                         value="undo"
+                     />
+                     <label for="Undo">Undo&nbsp;</label>
+                 </form>
+             </div>
+             <div id="brushType" class="topBarDiv">
+                 <form id="brushForm">
+
+                      <input type="radio"
+                             id="Round"
+                             name="useBrush"
+                             value="round">
+                      <label for="Round">Brush&nbsp;</label><br>
 
                      <input type="radio"
-                            id="Round"
-                            name="useBrush"
-                            value="round" checked>
-                     <label for="Round">Щітка&nbsp;</label><br>
+                             id="Area"
+                             name="useBrush"
+                             value="area">
+                      <label for="Area">Rectangle</label><br>
 
-                    <input type="radio"
-                            id="Area"
-                            name="useBrush"
-                            value="area">
-                     <label for="Area">Прямокутник</label><br>
+                      <input type="radio"
+                             id="Tap"
+                             name="useBrush"
+                             value="tap">
+                      <label for="Tap">Tap&nbsp;</label><br>
 
-                     <input type="radio"
-                            id="Tap"
-                            name="useBrush"
-                            value="tap">
-                     <label for="Tap">Кран&nbsp;</label><br>
+                 </form>
+             </div>
+             <div id="brushSizeDiv" class="topBarDiv">
+                 <center>
+                     Brush&nbsp;Size<br />
+                     <input
+                         type="range"
+                         min="10"
+                         max="100"
+                         value="55"
+                         class="slider"
+                         id="brushSizeSlider"
+                     />
+                      Blur&nbsp;Radius<br />
+                     <input
+                         type="range"
+                         min="40"
+                         max="150"
+                         value="75"
+                         class="slider"
+                         id="blurAmountSlider"
+                     />
+                 </center>
+             </div>
 
-                </form>
-            </div>
-            <div id="brushSizeDiv" class="topBarDiv">
-                <center>
-                    Розмір&nbsp;кисті<br />
-                    <input
-                        type="range"
-                        min="10"
-                        max="100"
-                        value="55"
-                        class="slider"
-                        id="brushSizeSlider"
-                    />
-                     Радіус&nbsp;розмиття<br />
-                    <input
-                        type="range"
-                        min="40"
-                        max="150"
-                        value="75"
-                        class="slider"
-                        id="blurAmountSlider"
-                    />
-                </center>
-            </div>
-
-        </div>
+         </div>
 
         <button id="about">О</button>
 
