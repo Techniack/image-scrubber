@@ -106,12 +106,12 @@ function onFileChange(e) {
             if (exifData) {
                 if (exifData.toString() == '{}') {
                     exifInformationHolder.innerHTML =
-                        "<center>No EXIF data found in image '" +
+                        "<center>На зображенні не знайдено даних EXIF '" +
                         file.name +
                         "'.<br><br></center>";
                     var btn = document.createElement('BUTTON');
                     btn.id = 'continueButton';
-                    btn.innerHTML = 'Continue to edit image';
+                    btn.innerHTML = 'Продовжуйте редагувати зображення';
                     btn.onclick = goToBlur;
                     exifInformationHolder.appendChild(btn);
                 } else {
@@ -119,12 +119,12 @@ function onFileChange(e) {
                     exifScrollDiv.id = 'exifScrollDiv';
                     exifScrollDiv.innerHTML =
                         file.name + '<pre>' + exifData + '</pre>';
-                    exifInformationHolder.innerHTML = 'Exif Data:<br><br>';
+                    exifInformationHolder.innerHTML = 'Дані Exif:<br><br>';
                     exifInformationHolder.appendChild(exifScrollDiv);
 
                     var btn = document.createElement('BUTTON');
                     btn.id = 'continueButtonExif';
-                    btn.innerHTML = 'Scrub Exif Data';
+                    btn.innerHTML = 'Очистіть дані Exif';
                     btn.onclick = scrubData;
                     exifInformationHolder.appendChild(btn);
                 }
