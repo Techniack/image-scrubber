@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="manifest" href="scripts/manifest.json" />
         <link rel="apple-touch-icon" href="scrubber_logo_ios_homescreen.png" />
-        <title>Image Scrubber</title>
+        <title>Скруббер изображений</title>
     </head>
     <link rel="stylesheet" type="text/css" href="scripts/css.css" />
     <script>
@@ -48,7 +48,7 @@
         <div id="topBar">
             <div class="topBarDiv">
                 <label for="file-input" class="customFileOpen controlButton"
-                    >Open&nbsp;Image&nbsp;📂</label
+                    >Открыть&nbsp;изображение&nbsp;📂</label
                 >
                 <input id="file-input" type="file" />
             </div>
@@ -57,11 +57,11 @@
                 id="saveButton"
                 onclick="saveImage(this)"
                 class="topBarDiv controlButton"
-                >Save&nbsp;Image&nbsp;💾</a
+                >Сохранять&nbsp;изображение&nbsp;💾</a
             >
 
             <div id="rotate" class="topBarDiv controlButton">
-                Rotate&nbsp;Image&nbsp;⤾
+                Повернуть&nbsp;изображение&nbsp;⤾
             </div>
 
             <div id="paintBlur" class="topBarDiv" class="customFileOpen">
@@ -72,7 +72,7 @@
                         name="paintingAction"
                         value="paint"
                     />
-                    <label for="Paint">Paint</label>&nbsp;<button data-jscolor="{valueElement:null,value:'000000'}" id="paintColor" style="width:20px; height:20px;"></button><br />
+                    <label for="Paint">Краска</label>&nbsp;<button data-jscolor="{valueElement:null,value:'000000'}" id="paintColor" style="width:20px; height:20px;"></button><br />
                     <input
                         type="radio"
                         id="Blur"
@@ -80,14 +80,14 @@
                         value="blur"
                         checked
                     />
-                    <label for="Blur">Blur&nbsp;</label><br />
+                    <label for="Blur">Размытие&nbsp;</label><br />
                     <input
                         type="radio"
                         id="Undo"
                         name="paintingAction"
                         value="undo"
                     />
-                    <label for="Undo">Undo&nbsp;</label>
+                    <label for="Undo">Отменить&nbsp;</label>
                 </form>
             </div>
             <div id="brushType" class="topBarDiv">
@@ -97,25 +97,25 @@
                             id="Round"
                             name="useBrush"
                             value="round" checked>
-                     <label for="Round">Brush&nbsp;</label><br>
+                     <label for="Round">Щетка&nbsp;</label><br>
 
                     <input type="radio"
                             id="Area"
                             name="useBrush"
                             value="area">
-                     <label for="Area">Rectangle</label><br>
+                     <label for="Area">Прямоугольник</label><br>
 
                      <input type="radio"
                             id="Tap"
                             name="useBrush"
                             value="tap">
-                     <label for="Tap">Tap&nbsp;</label><br>
+                     <label for="Tap">Кран&nbsp;</label><br>
 
                 </form>
             </div>
             <div id="brushSizeDiv" class="topBarDiv">
                 <center>
-                    Brush&nbsp;Size<br />
+                    Размер&nbsp;кисти<br />
                     <input
                         type="range"
                         min="10"
@@ -124,7 +124,7 @@
                         class="slider"
                         id="brushSizeSlider"
                     />
-                     Blur&nbsp;Radius<br />
+                     Радиус&nbsp;размытия<br />
                     <input
                         type="range"
                         min="40"
@@ -138,11 +138,11 @@
 
         </div>
 
-        <button id="about">About</button>
+        <button id="about">О</button>
 
         <div id="imageScrubberInfo">
             <pre>
-    <center><b>Image Scrubber</b></center>
+    <center><b>Скруббер изображений</b></center>
 
 Это инструмент для анонимизации фото
 Он удалит идентифицирующие метаданные(<a href="https://en.wikipedia.org/wiki/Exif">Exif data</a>)с фотографий, а также позволяют выборочно размыть части изображения, чтобы скрыть лица и другую идентифицируемую информацию.
